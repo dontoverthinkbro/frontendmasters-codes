@@ -1,8 +1,12 @@
 Goal: 2 months to complete
 
-1. [Complete Intro to Web Development, v3](https://frontendmasters.com/courses/web-development-v3/)
-2. [JavaScript: First Steps](https://frontendmasters.com/courses/javascript-first-steps/)
-3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/)
+1. [Complete Intro to Web Development, v3](https://frontendmasters.com/courses/web-development-v3/)<br>
+   [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/1-web-development-v3)<br>
+2. [JavaScript: First Steps](https://frontendmasters.com/courses/javascript-first-steps/)<br>
+   [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/2-javascript-first-steps)<br>
+
+3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/) <br> [Codes - Callbacks](https://github.com/phvvap/frontendmasters-codes/tree/main/3-javascript-hard-parts-v2/callbacks)
+
 4. [Deep JavaScript Foundations, v3](https://frontendmasters.com/courses/deep-javascript-v3/)
 5. [Functional JavaScript First Steps](https://frontendmasters.com/courses/functional-first-steps/)
 6. [JavaScript: The Recent Parts](https://frontendmasters.com/courses/js-recent-parts/)
@@ -17,7 +21,7 @@ Goal: 2 months to complete
 15. [Complete Intro to Computer Science](https://frontendmasters.com/courses/computer-science-v2/)
 16. [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/)
 
-# Notes
+# JavaScript: First Steps
 
 ## Difference between HTML DOM Document `getElementsByClassName()` and `querySelectorAll()`
 
@@ -111,7 +115,7 @@ import { veryUsefulFunction } from "./myModule.js";
 veryUsefulFunction();
 ```
 
-## Browser DEbugger
+## Browser Debugger
 
 You can also use the browser's debugger to _pause_ JS and inspect what's happening
 
@@ -123,3 +127,38 @@ function whyIsntThisWorking(input) {
 ```
 
 The `debugger` statement creates a _breakpoint_ where JS will pause and let you look around.
+
+# JavaScript: The Hard Parts
+
+## Principles
+
+- Goes through our code, line by line and does each of the line of code, they call this the **`thread of execution`**. It threads its way down and executes.
+
+- Saves 'data' like strings and arrays so we can use that data later - in its **`memory`**
+  <br>We can even save code ('function')
+
+- **`Functions`**:
+  Code we save ('define') functions & can use (call/invoke/execute/run) later with the function's name & ()
+
+- **`Execution context `**: Created to run the code of a function - has 2 parts:
+
+  - Thread of execution
+  - Memory
+
+- **`Call stack`**:
+  - JS keeps track of what function is currently running (where's the `thread of execution`)
+  - Run a function - add to `call stack`
+  - Finish running the function - JS removes it from `callstack`
+  - Whatever is top of the `call stack` - that's the function we're currently running<br><br>
+    Example: When we execute a function and execute another function inside of that function, we add it into the call stack, finish the **inside function** then go back to the **function**, then go to the `global()` - which is always at the end of the `call stack`.
+
+## Functions & Callbacks
+
+The _outer function_ that **takes in** a function is our `higher-order function`
+
+The function we insert is our `callback function`
+
+### Callbacks and Higher order functions simplify our code and keep it `DRY`
+
+- **Declarative readable code**: Map, filter, reduce - the most readable way to write code to work with data
+- **Asynchronous JavaScript**: Callbacks are a core aspect of async JS, and are under-the-hood of promises, async/await
