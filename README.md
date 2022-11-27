@@ -1,12 +1,12 @@
 Goal: 2 months to complete
 
+# Learning Path
+
 1. [Complete Intro to Web Development, v3](https://frontendmasters.com/courses/web-development-v3/)<br>
    [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/1-web-development-v3)<br>
 2. [JavaScript: First Steps](https://frontendmasters.com/courses/javascript-first-steps/)<br>
    [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/2-javascript-first-steps)<br>
-
 3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/) <br> [Codes - Callbacks](https://github.com/phvvap/frontendmasters-codes/tree/main/3-javascript-hard-parts-v2/callbacks)
-
 4. [Deep JavaScript Foundations, v3](https://frontendmasters.com/courses/deep-javascript-v3/)
 5. [Functional JavaScript First Steps](https://frontendmasters.com/courses/functional-first-steps/)
 6. [JavaScript: The Recent Parts](https://frontendmasters.com/courses/js-recent-parts/)
@@ -21,6 +21,19 @@ Goal: 2 months to complete
 15. [Complete Intro to Computer Science](https://frontendmasters.com/courses/computer-science-v2/)
 16. [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/)
 
+# Notes
+
+- [JavaScript: First Steps](#javascript-first-steps)
+  - [Difference between HTML DOM Document `getElementsByClassName()` and `querySelectorAll()`](#difference-between-html-dom-document-getelementsbyclassname-and-queryselectorall)
+  - [Diffderence between `innerText` and `textContent`](#diffderence-between-innertext-and-textcontent)
+  - [Difference between Parameters vs Arguments in JavaScript](#difference-between-parameters-vs-arguments-in-javascript)
+  - [fetch \& Promises](#fetch--promises)
+  - [import \&\& export](#import--export)
+  - [Browser Debugger](#browser-debugger)
+- [JavaScript: The Hard Parts](#javascript-the-hard-parts)
+  - [Principles](#principles)
+  - [Functions \& Callbacks](#functions--callbacks)
+
 # JavaScript: First Steps
 
 ## Difference between HTML DOM Document `getElementsByClassName()` and `querySelectorAll()`
@@ -34,7 +47,7 @@ Goal: 2 months to complete
   - `querySelectorAll` returns a `NodeList` and it is **not live** - so changing the DOM doesn't affect it.
   - Time complexity is O(n)
 
-### You will got this by looking at the example below:
+## You will got this by looking at the example below:
 
 Firstly, I create two variables called `a` - using `getElementsByClassName` and `b` using `querySelectorAll`
 ![](./images/dom-1.png)
@@ -77,7 +90,7 @@ For [more information](https://developer.mozilla.org/en-US/docs/Web/API/Node/tex
 
 **Argument** is the value that we pass into the function. When we call a function, _arguments_ we pass in will be value of the corresponding _parameters_.
 
-## fetch & Promises
+## fetch && Promises
 
 Imagine you fetch an API and you see `Promise {<state>: "pending}`, JS said: I promise I'm gonna get you this value but I don't have it yet. `Promise` is a construct in JS that lets represent a value that we don't have yet (take a while to get the value).
 
