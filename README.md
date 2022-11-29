@@ -171,7 +171,68 @@ The _outer function_ that **takes in** a function is our `higher-order function`
 
 The function we insert is our `callback function`
 
-### Callbacks and Higher order functions simplify our code and keep it `DRY`
+Callbacks and Higher order functions simplify our code and keep it `DRY`
 
 - **Declarative readable code**: Map, filter, reduce - the most readable way to write code to work with data
 - **Asynchronous JavaScript**: Callbacks are a core aspect of async JS, and are under-the-hood of promises, async/await
+
+## Closure
+
+- Closure is the most estoteric of JS concepts
+- Enables powerful pro-levle functions like 'once' and 'memoize'
+- Many JS design patterns including the module pattern use closure
+- Build iterators, handle partial application and maintain state in an synchronous world
+
+### Functions with memories
+
+- When our functions get called, we create a live store of data (local memory/ variable environment/state) for that function's execution context.
+- when the function finishes executing, its local memory is deleted (except the returned value)
+- But what if our functions could hold on to live data between executions?
+- This would let our function definitions have an associated cache/persistent memory
+- But it all starts with us **returning a function from another function**
+
+### Retaining Function Memory
+
+```javascript
+function outer() {
+  let counter = 0;
+  function incrementCounter() {
+    counter++;
+  }
+  return incrementCounter;
+}
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+```
+
+When we assign `outer` function to `myNewFunction`, it took that `incrementCounter` function definition and it will grab its surrounding data, and attached it onto to the function definition.
+
+### Function Closure
+
+In the code above, when we call `myNewFunction()` the first time, it willl go to the global memory and find `counter` variable in `myNewFunction` because like we said, not just the function definition but all its surrounding data goes with it.
+We increase `counter` so its value is `1`.
+After that, we call `myNewFunction()` again, it will do exactly same as the first time we call it, and we increase the value of `counter` by 1, so its value now is `2`
+
+![](images/closure.png)
+
+Imagine we have a hidden property `[[scope]]` - that links to all the surrounding data of the `incrementCounter` function definition that goes along with the `myNewFunction`, and we can just only access the surrounding data by running the function `myNewFunction`.
+
+> Notes: If we have another variable inside `outer()` function, let's say `let justAVar = 5`, when we grab the data along with the function definition, JavaScript will notice if `justAVar` appears inside that function definition (see if it is reference by the function). And if it is not, JavaScript will not grab it along with the function definition.
+
+We call the data surrounding that function definition `backpack`
+
+**Individual backpacks** <br>
+If we run '`outer`' again and store the returned '`incrementCounter`' function
+definition in '`anotherFunction`', this new `incrementCounter` function was created in
+a **new execution context** and therefore has a brand new **independent backpack**
+
+**Closure gives our functions persistent memories and entirely new toolkit for writing professional code** <br>
+
+- **Helper functions**: Everyday professional helper functions like ‘once’ and ‘memoize’
+- **Iterators and generators**: Which use lexical scoping (a variable is declared outside a function) and closure to achieve the
+  most contemporary patterns for handling data in JavaScript
+- **Module pattern**: Preserve state for the life of an application without polluting the
+  global namespace
+- **Asynchronous JavaScript**: Callbacks and Promises rely on closure to persist state
+  in an asynchronous environment
