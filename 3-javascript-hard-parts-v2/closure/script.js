@@ -1,17 +1,27 @@
 // CHALLENGE 1
-function createFunction() {}
+function createFunction() {
+  function printHello() {
+    console.log("hello");
+  }
+  return printHello;
+}
 
 // /*** Uncomment these to check your work! ***/
 // const function1 = createFunction();
 // function1(); // => should console.log('hello');
 
 // CHALLENGE 2
-function createFunctionPrinter(input) {}
+function createFunctionPrinter(input) {
+  function printMessage() {
+    console.log(input);
+  }
+  return printMessage;
+}
 
 // /*** Uncomment these to check your work! ***/
-// const printSample = createFunctionPrinter('sample');
+// const printSample = createFunctionPrinter("sample");
 // printSample(); // => should console.log('sample');
-// const printHello = createFunctionPrinter('hello');
+// const printHello = createFunctionPrinter("hello");
 // printHello(); // => should console.log('hello');
 
 // CHALLENGE 3
@@ -24,8 +34,8 @@ function outer() {
   return incrementCounter;
 }
 
-const willCounter = outer();
-const jasCounter = outer();
+// const willCounter = outer();
+// const jasCounter = outer();
 
 // Uncomment each of these lines one by one.
 // Before your do, guess what will be logged from each function call.
@@ -38,39 +48,86 @@ const jasCounter = outer();
 // jasCounter();
 // willCounter();
 
-function addByX(x) {}
+function addByX(x) {
+  function addBy(num) {
+    return num + x;
+  }
+  return addBy;
+}
 
 // /*** Uncomment these to check your work! ***/
-// const addByTwo = addByX(2);
+// assign 2 to x
+const addByTwo = addByX(2);
+// pass 1 to num
+// console.log(addByTwo(1));
+// console.log(addByTwo(2));
+// console.log(addByTwo(3));
 // addByTwo(1); // => should return 3
 // addByTwo(2); // => should return 4
 // addByTwo(3); // => should return 5
 
-// const addByThree = addByX(3);
+const addByThree = addByX(3);
+// console.log(addByThree(1));
+// console.log(addByThree(2));
+
 // addByThree(1); // => should return 4
 // addByThree(2); // => should return 5
 
-// const addByFour = addByX(4);
+const addByFour = addByX(4);
+// console.log(addByFour(4));
+// console.log(addByFour(5));
+
 // addByFour(4); // => should return 8
 // addByFour(5); // => should return 9
 
 // CHALLENGE 4
-function once(func) {}
+function once(func) {
+  let counter = 0;
+  let onceVal;
+  function innerFunc(val) {
+    if (counter == 0) {
+      onceVal = func(val);
+    }
+    counter++;
+    return onceVal;
+  }
+  return innerFunc;
+}
 
 // /*** Uncomment these to check your work! ***/
-// const onceFunc = once(addByTwo);
-// console.log(onceFunc(4));  // => should log 6
-// console.log(onceFunc(10));  // => should log 6
+// onceFunc is now addByTwo = (num) => { return num + 2 }
+const onceFunc = once(addByTwo);
+// first time call then pass 4 to val, and result of addByTwo(4)
+//  will be assign to onceVal, return it to onceFunc
+// onceFunc value is addByTwo(4)
+// console.log(onceFunc(4)); // => should log 6
+
+// console.log(onceFunc(10)); // => should log 6
 // console.log(onceFunc(9001));  // => should log 6
 
 // CHALLENGE 5
-function after(count, func) {}
-
+function after(count, func) {
+  let counter = 0;
+  function funcCount(val) {
+    counter += 1;
+    if (counter >= count) {
+      func(val);
+    }
+  }
+  return funcCount;
+}
 // /*** Uncomment these to check your work! ***/
-// const called = function() { console.log('hello') };
-// const afterCalled = after(3, called);
+function called() {
+  console.log("hello");
+}
+//
+// counter will be shipped within the backpack to afterCalled,
+const afterCalled = after(3, called);
+// counter = 1
 // afterCalled(); // => nothing is printed
+// counter = 2
 // afterCalled(); // => nothing is printed
+// counter = 3
 // afterCalled(); // => 'hello' is printed
 
 // CHALLENGE 6

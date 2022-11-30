@@ -6,7 +6,7 @@ Goal: 2 months to complete
    [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/1-web-development-v3)<br>
 2. [JavaScript: First Steps](https://frontendmasters.com/courses/javascript-first-steps/)<br>
    [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/2-javascript-first-steps)<br>
-3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/) <br> [Codes - Callbacks](https://github.com/phvvap/frontendmasters-codes/tree/main/3-javascript-hard-parts-v2/callbacks)
+3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/) <br> [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/3-javascript-hard-parts-v2)
 4. [Deep JavaScript Foundations, v3](https://frontendmasters.com/courses/deep-javascript-v3/)
 5. [Functional JavaScript First Steps](https://frontendmasters.com/courses/functional-first-steps/)
 6. [JavaScript: The Recent Parts](https://frontendmasters.com/courses/js-recent-parts/)
@@ -227,12 +227,9 @@ If we run '`outer`' again and store the returned '`incrementCounter`' function
 definition in '`anotherFunction`', this new `incrementCounter` function was created in
 a **new execution context** and therefore has a brand new **independent backpack**
 
-**Closure gives our functions persistent memories and entirely new toolkit for writing professional code** <br>
+### Why use const and when to use let in for...of loops?
 
-- **Helper functions**: Everyday professional helper functions like ‘once’ and ‘memoize’
-- **Iterators and generators**: Which use lexical scoping (a variable is declared outside a function) and closure to achieve the
-  most contemporary patterns for handling data in JavaScript
-- **Module pattern**: Preserve state for the life of an application without polluting the
-  global namespace
-- **Asynchronous JavaScript**: Callbacks and Promises rely on closure to persist state
-  in an asynchronous environment
+If there are no assignments to the identifier within the loop body, it's a matter of style whether you use `let` or `const`.
+
+- Use `const` if you want the identifier within the loop body to be read-only (so that, for instance, if someone modifies the code later to add an assignment, it's a proactive error).
+- Use `let` if you want to be able to assign to it (because you have an assignment in your code, or you want someone to be able to add one later without changing the declaration).
