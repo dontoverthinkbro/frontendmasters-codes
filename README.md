@@ -233,3 +233,5 @@ If there are no assignments to the identifier within the loop body, it's a matte
 ### Callbacks Queue & Event Loop
 
 All regular code will run first, then check the call stack if it is empty, if it is empty we put thing out of the `callbacks queue` - means we go to the callbacks queue and grab the function then put to the call stack. And if the call stack is still not empty, there's still global code to run, then I will not even go to look at the `callbacks queue`.
+
+> I will try to finish this lesson as soon as I can, after that I will research and write a post about callbacks, closure, asynchronous JS, promises
