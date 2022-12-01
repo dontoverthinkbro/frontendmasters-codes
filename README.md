@@ -24,15 +24,7 @@ Goal: 2 months to complete
 # Notes
 
 - [JavaScript: First Steps](#javascript-first-steps)
-  - [Difference between HTML DOM Document `getElementsByClassName()` and `querySelectorAll()`](#difference-between-html-dom-document-getelementsbyclassname-and-queryselectorall)
-  - [Diffderence between `innerText` and `textContent`](#diffderence-between-innertext-and-textcontent)
-  - [Difference between Parameters vs Arguments in JavaScript](#difference-between-parameters-vs-arguments-in-javascript)
-  - [fetch \& Promises](#fetch--promises)
-  - [import \&\& export](#import--export)
-  - [Browser Debugger](#browser-debugger)
 - [JavaScript: The Hard Parts](#javascript-the-hard-parts)
-  - [Principles](#principles)
-  - [Functions \& Callbacks](#functions--callbacks)
 
 # JavaScript: First Steps
 
@@ -233,3 +225,11 @@ If there are no assignments to the identifier within the loop body, it's a matte
 
 - Use `const` if you want the identifier within the loop body to be read-only (so that, for instance, if someone modifies the code later to add an assignment, it's a proactive error).
 - Use `let` if you want to be able to assign to it (because you have an assignment in your code, or you want someone to be able to add one later without changing the declaration).
+
+### Web Browser APIs Example - setTimeout
+
+![](images/setTimeOut.png)
+
+### Callbacks Queue & Event Loop
+
+All regular code will run first, then check the call stack if it is empty, if it is empty we put thing out of the `callbacks queue` - means we go to the callbacks queue and grab the function then put to the call stack. And if the call stack is still not empty, there's still global code to run, then I will not even go to look at the `callbacks queue`.

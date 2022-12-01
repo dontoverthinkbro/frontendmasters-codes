@@ -115,4 +115,3 @@ Write a <code>SecondClock</code> class, with two methods: <code>start</code> and
   <p><b>For examples of debouncing</b>, check out https://css-tricks.com/debouncing-throttling-explained-examples/</p>
 
 </li>
-</ul>

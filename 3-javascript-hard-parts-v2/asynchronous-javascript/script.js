@@ -14,6 +14,9 @@ function testMe() {
 /* CHALLENGE 2 */
 
 function delayedGreet() {
+  setTimeout(() => {
+    console.log("welcome");
+  }, 3000);
   // ADD CODE HERE
 }
 // Uncomment the following line to check your work!
@@ -51,33 +54,32 @@ function limitedRepeat() {
 
 /* CHALLENGE 6 */
 
-function everyXsecsForYsecs() {
+function everyXsecsForYsecs(func, interval, duration) {
   const intervalId = setInterval(func, interval * 1000);
   setTimeout(() => clearInterval(intervalId), duration * 1000);
   // ADD CODE HERE
 }
 // Uncomment the following lines to check your work!
-// function theEnd() {
-//   console.log('This is the end!');
-// }
-// everyXsecsForYsecs(theEnd, 2, 20); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
-
+function theEnd() {
+  console.log("This is the end!");
+}
+everyXsecsForYsecs(theEnd, 2, 20); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
 /* CHALLENGE 7 */
 
 function delayCounter(target, wait) {
-  let intervalId;
-  let counter = 0;
-  return function inner() {
-    if (counter === 0) {
-      counter++;
-      intervalId = setInterval(() => console.log(inner()), wait);
-    } else if (counter === target) {
-      clearInterval(intervalId);
-      return counter;
-    } else {
-      return counter++;
-    }
-  };
+  // let intervalId;
+  // let counter = 0;
+  // return function inner() {
+  //   if (counter === 0) {
+  //     counter++;
+  //     intervalId = setInterval(() => console.log(inner()), wait);
+  //   } else if (counter === target) {
+  //     clearInterval(intervalId);
+  //     return counter;
+  //   } else {
+  //     return counter++;
+  //   }
+  // };
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
