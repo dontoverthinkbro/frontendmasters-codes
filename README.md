@@ -234,4 +234,54 @@ If there are no assignments to the identifier within the loop body, it's a matte
 
 All regular code will run first, then check the call stack if it is empty, if it is empty we put thing out of the `callbacks queue` - means we go to the callbacks queue and grab the function then put to the call stack. And if the call stack is still not empty, there's still global code to run, then I will not even go to look at the `callbacks queue`.
 
-> I will try to finish this lesson as soon as I can, after that I will research and write a post about callbacks, closure, asynchronous JS, promises
+### Promises
+
+**Special objects** built into JavaScript that get returned immediately when we make
+a call to a web browser API/feature (e.g. fetch) that’s set up to return promises
+(not all are)
+
+`Promises` act as a placeholder for the data we expect to get back from the web
+browser feature’s background work
+
+**Problems**
+
+- 99% of developers have no idea how they’re working under the hood
+- Debugging becomes super-hard as a result
+- Developers fail technical interviews
+
+**Benefits**
+
+- Cleaner readable style with pseudo-synchronous style code
+- Nice error handling process
+
+### then method
+
+Any code we want to run on the returned data must also be saved on the `promise`
+`object`
+
+Added using `.then` method to the hidden property `‘onFulfilment’`
+
+`Promise objects` will automatically trigger the attached function to run (with its
+input being the returned data
+
+![](images/fetch-then.png)
+
+### Promises, Web APIs, the Callback & Microtask Queues and Event loop enable:
+
+- **Non-blocking applications**: This means we don’t have to wait in the single thread
+  and don’t block further code from running (setTimeout)
+- **However long it takes**: We cannot predict when our Browser feature’s work will
+  finish so we let JS handle automatically running the function on its completion (then)
+- **Web applications**: Asynchronous JavaScript is the backbone of the modern web -
+  letting us build fast ‘non-blocking’ applications
+
+> Notes:
+> [Callback Function là gì? Tổng quan về Callback Function](https://vn.got-it.ai/blog/callback-function-la-gi-tong-quan-ve-callback-function)
+
+## Example fetch, then, microtask queue
+
+Any function that is attached to a promise object via the then method, and then auto triggered to run from within JavaScript when the value property that promise object gets updated automatically, as a result of the background work from a two pronged facade function like fetch.
+
+That function ain't going in the callback queue. It's going in the microtask queue. And when all global code is finished running, and there's nothing on the call stack, the event loop goes and checks the queues. Which does it check first? The microtask queue. It dequeues the function, runs it, and then only finally then does it check the callback queue.
+
+![](images/example-f-t-mq.png)
