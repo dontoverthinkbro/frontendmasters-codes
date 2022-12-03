@@ -8,18 +8,16 @@ Goal: 2 months to complete
    [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/2-javascript-first-steps)<br>
 3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/) <br> [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/3-javascript-hard-parts-v2)
 4. [Deep JavaScript Foundations, v3](https://frontendmasters.com/courses/deep-javascript-v3/)
-5. [Functional JavaScript First Steps](https://frontendmasters.com/courses/functional-first-steps/)
-6. [JavaScript: The Recent Parts](https://frontendmasters.com/courses/js-recent-parts/)
-7. [JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
-8. [Complete Intro to React, v7](https://frontendmasters.com/courses/complete-react-v7/)
-9. [Intermediate React, v4](https://frontendmasters.com/courses/intermediate-react-v4/)
-10. [State Management in Pure React, v2](https://frontendmasters.com/courses/pure-react-state/)
-11. [TypeScript Fundamentals, v3](https://frontendmasters.com/courses/typescript-v3/)
-12. [Intermediate TypeScript](https://frontendmasters.com/courses/intermediate-typescript/)
-13. [React and TypeScript](https://frontendmasters.com/courses/react-typescript/)
-14. [Redux Fundamentals (feat. React)](https://frontendmasters.com/courses/redux-fundamentals/)
-15. [Complete Intro to Computer Science](https://frontendmasters.com/courses/computer-science-v2/)
-16. [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/)
+5. [JavaScript: The Recent Parts](https://frontendmasters.com/courses/js-recent-parts/)
+6. [Complete Intro to React, v7](https://frontendmasters.com/courses/complete-react-v7/)
+7. [Intermediate React, v4](https://frontendmasters.com/courses/intermediate-react-v4/)
+8. [State Management in Pure React, v2](https://frontendmasters.com/courses/pure-react-state/)
+9. [TypeScript Fundamentals, v3](https://frontendmasters.com/courses/typescript-v3/)
+10. [Intermediate TypeScript](https://frontendmasters.com/courses/intermediate-typescript/)
+11. [React and TypeScript](https://frontendmasters.com/courses/react-typescript/)
+12. [Redux Fundamentals (feat. React)](https://frontendmasters.com/courses/redux-fundamentals/)
+13. [Complete Intro to Computer Science](https://frontendmasters.com/courses/computer-science-v2/)
+14. [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/)
 
 # Notes
 
@@ -285,3 +283,19 @@ Any function that is attached to a promise object via the then method, and then 
 That function ain't going in the callback queue. It's going in the microtask queue. And when all global code is finished running, and there's nothing on the call stack, the event loop goes and checks the queues. Which does it check first? The microtask queue. It dequeues the function, runs it, and then only finally then does it check the callback queue.
 
 ![](images/example-f-t-mq.png)
+
+## Classes & Prototypes
+
+### Prototype-chain
+
+![](images/prototype-chain.png)
+
+### new & class
+
+When we call the function that returns an object with `new` in front we automate 2
+things
+
+1. Create a new user object
+2. Return the new user object
+
+![](images/new-class.png)
