@@ -7,17 +7,16 @@ Goal: 2 months to complete
 2. [JavaScript: First Steps](https://frontendmasters.com/courses/javascript-first-steps/)<br>
    [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/2-javascript-first-steps)<br>
 3. [JavaScript: The Hard Parts, v2](https://frontendmasters.com/courses/javascript-hard-parts-v2/) <br> [Codes](https://github.com/phvvap/frontendmasters-codes/tree/main/3-javascript-hard-parts-v2)
-4. [Deep JavaScript Foundations, v3](https://frontendmasters.com/courses/deep-javascript-v3/)
-5. [JavaScript: The Recent Parts](https://frontendmasters.com/courses/js-recent-parts/)
-6. [Complete Intro to React, v7](https://frontendmasters.com/courses/complete-react-v7/)
-7. [Intermediate React, v4](https://frontendmasters.com/courses/intermediate-react-v4/)
-8. [State Management in Pure React, v2](https://frontendmasters.com/courses/pure-react-state/)
-9. [TypeScript Fundamentals, v3](https://frontendmasters.com/courses/typescript-v3/)
-10. [Intermediate TypeScript](https://frontendmasters.com/courses/intermediate-typescript/)
-11. [React and TypeScript](https://frontendmasters.com/courses/react-typescript/)
-12. [Redux Fundamentals (feat. React)](https://frontendmasters.com/courses/redux-fundamentals/)
-13. [Complete Intro to Computer Science](https://frontendmasters.com/courses/computer-science-v2/)
-14. [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/)
+4. [JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
+5. [Complete Intro to React, v8](https://frontendmasters.com/courses/complete-react-v8/)
+6. [Intermediate React, v4](https://frontendmasters.com/courses/intermediate-react-v4/)
+7. [State Management in Pure React, v2](https://frontendmasters.com/courses/pure-react-state/)
+8. [TypeScript Fundamentals, v3](https://frontendmasters.com/courses/typescript-v3/)
+9. [Intermediate TypeScript](https://frontendmasters.com/courses/intermediate-typescript/)
+10. [React and TypeScript](https://frontendmasters.com/courses/react-typescript/)
+11. [Redux Fundamentals (feat. React)](https://frontendmasters.com/courses/redux-fundamentals/)
+12. [Complete Intro to Computer Science](https://frontendmasters.com/courses/computer-science-v2/)
+13. [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/)
 
 # Notes
 
@@ -37,7 +36,7 @@ Goal: 2 months to complete
   - `querySelectorAll` returns a `NodeList` and it is **not live** - so changing the DOM doesn't affect it.
   - Time complexity is O(n)
 
-## You will got this by looking at the example below:
+### You will got this by looking at the example below:
 
 Firstly, I create two variables called `a` - using `getElementsByClassName` and `b` using `querySelectorAll`
 ![](./images/dom-1.png)
@@ -299,3 +298,33 @@ things
 2. Return the new user object
 
 ![](images/new-class.png)
+
+### Types
+
+`typeof` Operator return str(type), not a type
+
+`undeclared`: it's never been created in any scope that we have access to.
+
+`undefined`: the'res definitely a variable, and at the moment it has no value
+
+Basically in JavaScript we get `Undefined value` of the `uninitiallized` variables.
+
+### NaN
+
+`NaN` indicates **an invalid number**. It's better than referring to it is **not a number**. Because type of NaN is number, not _not a number_.
+
+When want to check `isNan`, we should use: `Number.isNaN(variable_name)`
+
+`isNaN("my age")` == `true` because isNaN coerces values to numbers before it checks for them to be NaN **but** `Number.isNaN("my age")` == `false`
+
+- `isNaN` converts the argument to a `Number` and returns **true** if the resulting value is `NaN`.
+- `Number.isNaN` does not convert the argument; it returns **true** when the argument is a `Number` and is `NaN`.
+
+```javascript
+variable = Number("n/a"); // NaN
+variable === variable; // false
+```
+
+because IEEE said: "_NaNs are not equal to each other_"
+
+# JavaScript: The New Hard Parts
